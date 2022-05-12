@@ -11,7 +11,7 @@ export const HomeSection = () => {
             <div class="text-3">
               <span>You Trust, We Care...</span>
             </div>
-            <a href="/login">Login</a>
+            <a href="/login">Sign up</a>
             {/* <a href="/signup">Signup</a> */}
           </div>
         </div>
