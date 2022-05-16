@@ -33,9 +33,6 @@ const DoctorSchema = new mongoose.Schema(
           type: String,
           required: true,
         },
-        Reset_pass_token: {
-          type: String,
-        },
         Patients: [
           {
             Name: { type: String },

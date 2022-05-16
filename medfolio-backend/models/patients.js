@@ -35,9 +35,6 @@ const Patients_schema = new Schema(
       type: String,
       required: true,
     },
-    Reset_pass_token: {
-      type: String,
-    },
 
     Doctor: [
       {

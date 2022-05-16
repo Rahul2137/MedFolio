@@ -24,6 +24,9 @@ const UserSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  Reset_pass_token: {
+    type: String,
+  },
 });
 
 UserSchema.pre("save", async function (next) {
