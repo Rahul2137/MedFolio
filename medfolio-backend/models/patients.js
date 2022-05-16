@@ -4,20 +4,13 @@ const Schema = mongoose.Schema;
 
 const Patients_schema = new Schema(
   {
-    email: {
-        type: String,
-    },
-    password: {
-        type: String,
-        required: true,
-    },
     name: {
       type: String,
       required: true,
     },
     _id: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "users",
+      ref: "Users",
     },
     Address: {
       type: String,
@@ -33,41 +26,35 @@ const Patients_schema = new Schema(
       past_diseases: [{ type: String }],
       active_diseases: [{ type: String }],
       active_medicines: [{ type: String }],
+      followup_date: [{ type: String }],
     },
     mobile: {
       type: String,
     },
-    Reset_pass_token: {
+    email: {
       type: String,
+      required: true,
     },
-    auth_pass_token: {
-        type: String,
-    },
+
     Doctor: [
       {
         Name: { type: String },
+        Doctor_ID: { 
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Doctors",
+        },
         Speciality: { type: String },
         Prescriptions: [
           {
-            Doctor_ID: { type: String },
             Prescription_ID: { type: String },
             Date: { type: Date },
             Daigonisis: { type: String },
             Tablets: { type: Array },
             Syrups: { type: Array },
-            followup_date: [{ type: String }],
           },
         ],
       },
     ],
-    isVerified: {
-        type: Boolean,
-        default: false,
-      },
-    isDetail: {
-        type: Boolean,
-        default: false,
-    },
   },
   {
     timestamps: true,
